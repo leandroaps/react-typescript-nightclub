@@ -1,13 +1,13 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 
-import { AddAttendeeFunction } from '../../custom-hooks/useAttendees';
-import { Attendee } from '../../types';
-import AttendeeInformation from '../AttendeeInformation';
-import CreateAttendee from '../CreateAttendee';
+import { AddAttendeeFunction } from '../../custom-hooks/useAttendees'
+import { Attendee } from '../../types'
+import AttendeeInformation from '../AttendeeInformation'
+import CreateAttendee from '../CreateAttendee'
 
 interface AttendeeListProps {
-  attendees: Attendee[];
-  addAttendee: AddAttendeeFunction;
+  attendees: Attendee[]
+  addAttendee: AddAttendeeFunction
 }
 
 const AttendeeList = (props: AttendeeListProps): ReactElement => {
@@ -20,7 +20,7 @@ const AttendeeList = (props: AttendeeListProps): ReactElement => {
         ))}
       </ol>
     </>
-  );
-};
+  )
+}
 
-export default AttendeeList;
+export default AttendeeList

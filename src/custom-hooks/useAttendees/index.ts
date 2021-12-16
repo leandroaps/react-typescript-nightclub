@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Attendee, AttendeePermission } from '../../types';
+import { useState } from 'react'
+import { Attendee, AttendeePermission } from '../../types'
 
 const initialAttendees: Attendee[] = [
   {
@@ -12,18 +12,18 @@ const initialAttendees: Attendee[] = [
     age: 14,
     permission: AttendeePermission.Refused,
   },
-];
+]
 
-export type AddAttendeeFunction = (attendee: Attendee) => void;
+export type AddAttendeeFunction = (attendee: Attendee) => void
 
 const useAttendees = (): [Attendee[], AddAttendeeFunction] => {
-  const [attendees, setAttendees] = useState<Attendee[]>(initialAttendees);
+  const [attendees, setAttendees] = useState<Attendee[]>(initialAttendees)
 
   const addAttendee = (newAttendee: Attendee): void => {
-    setAttendees([...attendees, newAttendee]);
-  };
+    setAttendees([...attendees, newAttendee])
+  }
 
-  return [attendees, addAttendee];
-};
+  return [attendees, addAttendee]
+}
 
-export default useAttendees;
+export default useAttendees

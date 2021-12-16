@@ -6,7 +6,7 @@ export enum AttendeePermission {
 }
 
 export interface Attendee {
-  name: string;
-  age: number;
-  permission: AttendeePermission;
+  name: string
+  age: number
+  permission: AttendeePermission
 }

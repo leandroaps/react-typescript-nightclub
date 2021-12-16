@@ -1,9 +1,9 @@
-import { ReactElement, useState } from 'react';
-import { AddAttendeeFunction } from '../../custom-hooks/useAttendees';
-import { AttendeePermission } from '../../types';
+import { ReactElement, useState } from 'react'
+import { AddAttendeeFunction } from '../../custom-hooks/useAttendees'
+import { AttendeePermission } from '../../types'
 
 interface CreateAttendeeProps {
-  addAttendee: AddAttendeeFunction;
+  addAttendee: AddAttendeeFunction
 }
 
 const permissionsOptions: Record<string, AttendeePermission> = {
@@ -11,22 +11,22 @@ const permissionsOptions: Record<string, AttendeePermission> = {
   Banned: AttendeePermission.Banned,
   Refused: AttendeePermission.Refused,
   'Special Guest': AttendeePermission.SpecialGuest,
-};
+}
 
-const permissionsKeys = Object.keys(permissionsOptions);
+const permissionsKeys = Object.keys(permissionsOptions)
 
 const CreateAttendee = (props: CreateAttendeeProps): ReactElement => {
-  const [name, setName] = useState<string>('');
-  const [age, setAge] = useState<number>(0);
-  const [permission, setPermission] = useState<string>(permissionsKeys[0]);
+  const [name, setName] = useState<string>('')
+  const [age, setAge] = useState<number>(0)
+  const [permission, setPermission] = useState<string>(permissionsKeys[0])
 
   const save = () => {
     props.addAttendee({
       name,
       age,
       permission: permissionsOptions[permission],
-    });
-  };
+    })
+  }
 
   return (
     <div className="card">
@@ -84,7 +84,7 @@ const CreateAttendee = (props: CreateAttendeeProps): ReactElement => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CreateAttendee;
+export default CreateAttendee
