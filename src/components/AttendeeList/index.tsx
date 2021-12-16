@@ -13,12 +13,17 @@ interface AttendeeListProps {
 const AttendeeList = (props: AttendeeListProps): ReactElement => {
   return (
     <>
-      <CreateAttendee addAttendee={props.addAttendee} key="addAttendee" />
-      <ol className="list-group list-group-numbered mt-5">
-        {props.attendees.map((attendee, index) => (
-          <AttendeeInformation key={index} attendee={attendee} />
-        ))}
-      </ol>
+      <CreateAttendee addAttendee={props.addAttendee} />
+      <div className="card mt-2">
+        <div className="card-body">
+          <h5 className="card-title">Attendees</h5>
+          <ol className="list-group list-group-numbered ">
+            {props.attendees.map((attendee, index) => (
+              <AttendeeInformation key={index} attendee={attendee} />
+            ))}
+          </ol>
+        </div>
+      </div>
     </>
   )
 }
